@@ -1,6 +1,6 @@
-import Productlist from "@/components/ProductsList"
 
-export default function Home(){
-    return <Productlist>;
+import ProductsList from "@/components/ProductsList";
 
-</Productlist >}
+export default function Home() {
+    return <ProductsList />;
+}
