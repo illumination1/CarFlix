@@ -4,7 +4,8 @@ import Image from "next/image";
 
 const getProducts = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/products", {
+    // const res = await fetch("http://localhost:3000/api/products", {
+    const res = await fetch("/api/products", {
       cache: "no-store",
     });
 
