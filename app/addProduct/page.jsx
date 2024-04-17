@@ -20,8 +20,7 @@ export default function AddProduct() {
         }
 
         try {
-            // const res = await fetch("http://localhost:3000/api/products", {
-            const res = await fetch("/api/products", {
+            const res = await fetch("http://localhost:3000/api/products", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json",
