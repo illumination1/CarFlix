@@ -139,7 +139,7 @@ const getProducts = async () => {
   }
 };
 
-export default async function ProductsList() {
+export default async function ProductList() {
   const { products } = await getProducts();
 
   return (
