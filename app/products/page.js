@@ -1,8 +1,3 @@
-const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-
-export default function Home() {
-    return <ProductsList apiBaseUrl={apiBaseUrl} />;
-}
 
 // "use client";
 // import ProductsList from "@/components/ProductsList";
@@ -10,3 +5,14 @@ export default function Home() {
 // export default function Home() {
 //     return <ProductsList />;
 // }
+
+import ProductsList from '@/components/ProductsList'; // Make sure the path is correct based on your project structure
+
+export default function ProductsPage() {
+  return (
+    <div>
+      <h1>Products Page</h1>
+      <ProductsList />
+    </div>
+  );
+}
