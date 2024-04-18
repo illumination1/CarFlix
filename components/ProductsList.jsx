@@ -63,19 +63,6 @@ import Image from "next/image";
 
 const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
-export async function getProducts() {
-  try {
-    const res = await fetch(`${apiBaseUrl}/api/products`, {});
-
-    if (!res.ok) {
-      throw new Error("Failed to fetch products");
-    }
-
-    return res.json();
-  } catch (error) {
-    console.log("Error loading products: ", error);
-  }
-}
 
 export default async function ProductsList() {
   const { products } = await getProducts();
@@ -118,3 +105,16 @@ export default async function ProductsList() {
 }
 
 
+export async function getProducts() {
+  try {
+    const res = await fetch(`${apiBaseUrl}/api/products`, {});
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch products");
+    }
+
+    return res.json();
+  } catch (error) {
+    console.log("Error loading products: ", error);
+  }
+}
