@@ -1,10 +1,10 @@
 
-"use client";
-import ProductsList from "@/components/ProductsList";
+// "use client";
+// import ProductsList from "@/components/ProductsList";
 
-export default function Home() {
-    return <ProductsList />;
-}
+// export default function Home() {
+//     return <ProductsList />;
+// }
 
 // import ProductsList from '@/components/ProductsList'; 
 
@@ -16,3 +16,9 @@ export default function Home() {
 //     </div>
 //   );
 // }
+
+import ProductsList from "@/components/ProductsList";
+
+export default function Home() {
+  return <ProductsList />;
+}
