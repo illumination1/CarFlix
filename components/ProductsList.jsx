@@ -17,45 +17,44 @@ const getProducts = async () => {
   }
 };
 
-export default async function ProductLis() {
-  const { product } = await getProducts();
+export default async function ProductList() {
+  const { products } = await getProducts();
 
   return (
-    <> {/* Wrap JSX code with a React fragment */}
-      <div className="bg-black min-h-screen flex flex-col justify-center items-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8">
-          {product.map((rs) => (
-            <div key={rs._id} className="max-w-xs">
-              <div className="bg-white rounded-lg overflow-hidden shadow-md">
-                <Image
-                  src={rs.image}
-                  alt={rs.name}
-                  width={300}
-                  height={200}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-4">
-                  <h2 className="font-bold text-xl mb-2 text-black">{rs.name}</h2>
-                  <p className="text-gray-700">${rs.price}</p>
-                  <p className="text-gray-700">{rs.category}</p>
-                </div>
-                <div className="p-4 flex justify-end">
-                  <Link href={`/editProduct/${rs._id}`}>
-                    <button className="btn btn-primary mr-2">Edit</button>
-                  </Link>
-                  <RemoveBtn id={rs._id} />
-                </div>
+    <div className="bg-black min-h-screen flex flex-col justify-center items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8">
+        {products.map((rs) => (
+          <div key={rs._id} className="max-w-xs">
+            <div className="bg-white rounded-lg overflow-hidden shadow-md">
+              <Image
+                src={rs.image}
+                alt={rs.name}
+                width={300}
+                height={200}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h2 className="font-bold text-xl mb-2 text-black">{rs.name}</h2>
+                <p className="text-gray-700">${rs.price}</p>
+                <p className="text-gray-700">{rs.category}</p>
+              </div>
+              <div className="p-4 flex justify-end">
+                <Link href={`/editProduct/${rs._id}`}>
+                  <button className="btn btn-primary mr-2">Edit</button>
+                </Link>
+                <RemoveBtn id={rs._id} />
               </div>
             </div>
-          ))}
-        </div>
-        <div className="mt-4">
-          <Link href="/addProduct">
-            <button className="btn btn-primary">Add Product</button>
-          </Link>
-        </div>
+          </div>
+        ))}
       </div>
-    </>
+      <div className="mt-4">
+        <Link href="/addProduct">
+          <button className="btn btn-primary">Add Product</button>
+        </Link>
+      </div>
+    </div>
   );
 }
+
 
