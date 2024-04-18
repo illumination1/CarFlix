@@ -18,12 +18,12 @@ const getProducts = async () => {
 };
 
 export default async function ProductList() {
-  const { products } = await getProducts();
+  const  resp  = await getProducts();
 
   return (
     <div className="bg-black min-h-screen flex flex-col justify-center items-center">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8">
-        {products.map((rs) => (
+        {resp?.products.map((rs) => (
           <div key={rs._id} className="max-w-xs">
             <div className="bg-white rounded-lg overflow-hidden shadow-md">
               <Image
