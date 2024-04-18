@@ -1,7 +1,7 @@
 "use client";
  
 import { useRouter } from "next/navigation";
- 
+const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 export default function RemoveBtn({ id }) {
     const router = useRouter();
     const removeProduct= async () => {

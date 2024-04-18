@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-
+const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 export default function EditProductForm({ id, name, image, price, category }) {
     const [newName, setNewName] = useState(name);
     const [newImage, setNewImage] = useState(image);

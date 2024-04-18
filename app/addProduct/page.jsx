@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-
+const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 export default function AddProduct() {
     const [name, setName] = useState("");
     const [image, setImage] = useState("");

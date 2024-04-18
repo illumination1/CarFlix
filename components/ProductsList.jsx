@@ -1,7 +1,7 @@
 import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
 import Image from "next/image";
-
+const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 const getProducts = async () => {
   try {
     const res = await fetch(`${apiBaseUrl}/api/products`, {

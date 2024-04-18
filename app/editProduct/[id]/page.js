@@ -1,7 +1,7 @@
 // app\editProduct\[id]\page.js
 import React from "react";
 import EditProductForm from "@/components/EditProductForm";
-
+const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 const getProductById = async (id) => {
     try {
         const res = await fetch(`${apiBaseUrl}/api/products/${id}`, {
